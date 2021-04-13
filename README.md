@@ -15,7 +15,7 @@ In our application, you can:
 
 ## Project Group Information:
 Group name: Project Group 34  
-"UNIS: [yl4602,yc2303]"
+"UNIS: [yl4602,yq2303]"
 
 ## Link:
 Here is a link to our server:
