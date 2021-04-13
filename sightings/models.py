@@ -82,11 +82,6 @@ class Sighting(models.Model):
             blank = True,
             )
     
-    Specific_Location = models.TextField(
-            help_text = _('Additional info of the location'),
-            blank = True,
-            )
-    
     Running = models.NullBooleanField(
             help_text = _('Running'),
             blank=True,
