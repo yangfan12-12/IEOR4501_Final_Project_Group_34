@@ -3,20 +3,21 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, sh
+rink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootst
-rap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS
-6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap
+/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6
+fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet"
           href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF
-7tcCzusKFjFw2yuvEpDL9wQ=="
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQC
+AWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaq
-DkyBKgOaB57QTMg7ztg8Jm2Og=="
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2I
+LxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
             crossorigin=""></script>
     <style>
       html,body {
@@ -28,15 +29,15 @@ DkyBKgOaB57QTMg7ztg8Jm2Og=="
     <div id="map" class="container-fluid h-100"></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2D
-KtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></scrip
-t>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
- integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crosso
-rigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integ
-rity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin=
-"anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integri
+ty="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5Kk
+N" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/u
+md/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7h
+UibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootst
+rap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1M
+quVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Leaflet JS -->
     <script>
         var map_center = [
@@ -45,20 +46,22 @@ rity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" c
         ];
         var zoom_level = 14;
         var map = L.map('map').setView(map_center, zoom_level);
-        L.tileLayer('https://{server}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://{server}.tile.openstreetmap.org/{z}/{x}/{y}.p
+ng', {
             server: 'a',  // can be 'a', 'b', or 'c'
             // must leave attribution in!
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStre
-etMap</a> contributors',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/co
+pyright">OpenStreetMap</a> contributors',
         }).addTo(map);
         <!-- L.Icon.Default.prototype.options.iconSize = 15; -->
         <!-- L.Icon.Default.prototype.options.iconAnchor = [0, 0]; -->
         <!-- L.Icon.Default.prototype.options.shadowSize = 15; -->
         <!-- L.Icon.Default.prototype.options.shadowAnchor = [0, 0]; -->
         {% for sighting in sightings %}
-          var point_lat_lon = [{{ sighting.Latitude }}, {{ sighting.Longitude }}];
-          var marker = L.marker(point_lat_lon).addTo(map).bindPopup("Loction:<br>{{sighting
-.Latitude}}, {{sighting.Longitude}}");
+          var point_lat_lon = [{{ sighting.Latitude }}, {{ sighting.Longit
+ude }}];
+          var marker = L.marker(point_lat_lon).addTo(map).bindPopup("Locti
+on:<br>{{sighting.Latitude}}, {{sighting.Longitude}}");
         {% endfor %}
     </script>
   </body>
