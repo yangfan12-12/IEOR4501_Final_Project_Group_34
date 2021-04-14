@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Sighting
+from .forms import SightingForm
 
 def base_view(request):
     return render(request,'sightings/base.html', {})
@@ -25,7 +25,18 @@ def update(request,Unique_Squirrel_Id):
     pass
 
 def add(request):
-    pass
+    if request.method == 'POST':
+        form = SightingForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = SightingForm()
+
+    context = {
+            'form':form,
+            }
+
+    return render(request, 'sightings/add.html', context)
 
 def stats(request):
     sightings = Sighting.objects.all()
