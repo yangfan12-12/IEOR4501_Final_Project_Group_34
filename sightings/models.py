@@ -82,75 +82,88 @@ class Sighting(models.Model):
             blank = True,
             )
     
-    Running = models.NullBooleanField(
+    Running = models.BooleanField(
+            null=True,
+            blank=True,
             help_text = _('Running'),
-            blank=True,
             )
     
-    Chasing = models.NullBooleanField(
+    Chasing = models.BooleanField(
             help_text = _('Chasing'),
+            null=True,
             blank=True,
             )
     
-    Climbing = models.NullBooleanField(
+    Climbing = models.BooleanField(
             help_text = _('Climbing'),
+            null=True,
             blank=True,
             )
     
-    Eating = models.NullBooleanField(
+    Eating = models.BooleanField(
             help_text = _('Eating'),
+            null=True,
             blank=True,
             )
     
-    Foraging = models.NullBooleanField(
+    Foraging = models.BooleanField(
             help_text = _('Foraging'),
+            null=True,
             blank=True,
             )
     
     Other_Activities = models.TextField(
-        help_text = _('Other Activities'),
-        null = True,
-        blank = True,
+            help_text = _('Other Activities'),
+            null = True,
+            blank = True,
         )
     
-    Kuks = models.NullBooleanField(
+    Kuks = models.BooleanField(
             help_text = _('Kuks'),
             blank=True,
+            null = True,
             )
     
-    Quaas = models.NullBooleanField(
+    Quaas = models.BooleanField(
             help_text = _('Quaas'),
             blank=True,
+            null = True,
             )
     
-    Moans = models.NullBooleanField(
+    Moans = models.BooleanField(
             help_text = _('Moans'),
             blank=True,
+            null = True,
             )
     
-    Tail_Flags = models.NullBooleanField(
+    Tail_Flags = models.BooleanField(
             help_text = _('Tail_Flags'),
             blank=True,
+            null = True,
             )
     
-    Tail_Twitches = models.NullBooleanField(
+    Tail_Twitches = models.BooleanField(
             help_text = _('Tail_Twitches'),
             blank=True,
+            null = True,
             )
     
-    Approaches = models.NullBooleanField(
+    Approaches = models.BooleanField(
             help_text = _('Approaches'),
             blank=True,
+            null = True, 
             )
     
-    Indifferent = models.NullBooleanField(
+    Indifferent = models.BooleanField(
             help_text = _('Indifferent'),
             blank=True,
+            null = True, 
             )
     
-    Runs_From = models.NullBooleanField(
+    Runs_From = models.BooleanField(
             help_text = _('Runs_From'),
             blank=True,
+            null = True, 
             )
 
 
