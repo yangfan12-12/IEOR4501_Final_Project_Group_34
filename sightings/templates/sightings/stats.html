@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Squirrels: Statistics Overview </title> 
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        </head>
+        <body>
+		<div align="center">
+		<p>
+			<h1>Statistics Overview</h1>
+		</p>
+		<p>
+			<h3>Total Numbers:</h3>
+		</p>
+		<p>
+			<h4>Our App is currently keeping strack of <em>{{context.Total}}</em> Squirrel Sightings</h4>
+                </p>
+		<br>
+		</div>
+		<div align="center">
+			<p>
+				<h3>Shift Distribution</h3>
+			</p>
+			<br>
+			<table class="table table-hover" style="width: 700px">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col-4">Shift</th>
+						<th scope="col-4">Count</th>
+						<th scope="col-4">Percentage(%)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td scope="row">AM</td>
+						<td>{{context.Shift.AM}}</td>
+						<td>{{context.Shift_Percentage.AM}}</td>
+					</tr>
+					<tr>
+                                                <td scope="row">PM</td>
+						<td>{{context.Shift.PM}}</td>
+                                                <td>{{context.Shift_Percentage.PM}}</td>
+                                        </tr>
+				</tbody>
+			</table>
+		</div>
+		<div align="center">
+                        <p>
+                                <h3>Age Distribution</h3>
+                        </p>
+                        <br>
+                        <table class="table table-hover" style="width: 700px">
+                                <thead class="thead-light">
+                                        <tr>
+                                                <th scope="col-4">Age</th>
+                                                <th scope="col-4">Count</th>
+                                                <th scope="col-4">Percentage(%)</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td scope="row">Juvenile</td>
+                                                <td>{{context.Age.Juvenile}}</td>
+                                                <td>{{context.Age_Percentage.Juvenile}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td scope="row">Adult</td>
+                                                <td>{{context.Age.Adult}}</td>
+                                                <td>{{context.Age_Percentage.Adult}}</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+		<div align="center">
+                        <p>
+                                <h3>Primary Fur Color Distribution</h3>
+                        </p>
+                        <br>
+                        <table class="table table-hover" style="width: 700px">
+                                <thead class="thead-light">
+                                        <tr>
+                                                <th scope="col-4">Primary Fur Color</th>
+                                                <th scope="col-4">Count</th>
+                                                <th scope="col-4">Percentage(%)</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td scope="row">Black</td>
+                                                <td>{{context.Primary_Fur_Color.Black}}</td>
+                                                <td>{{context.Primary_Fur_Color_Percentage.Black}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td scope="row">Gray</td>
+                                                <td>{{context.Primary_Fur_Color.Gray}}</td>
+                                                <td>{{context.Primary_Fur_Color_Percentage.Gray}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td scope="row">Cinnamon</td>
+                                                <td>{{context.Primary_Fur_Color.Cinnamon}}</td>
+                                                <td>{{context.Primary_Fur_Color_Percentage.Cinnamon}}</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+		<div align="center">
+                        <p>
+                                <h3>Location Distribution</h3>
+                        </p>
+                        <br>
+                        <table class="table table-hover" style="width: 700px">
+                                <thead class="thead-light">
+                                        <tr>
+                                                <th scope="col-4">Location</th>
+                                                <th scope="col-4">Count</th>
+                                                <th scope="col-4">Percentage(%)</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td scope="row">Above_Ground</td>
+                                                <td>{{context.Location.Above_Ground}}</td>
+                                                <td>{{context.Location_Percentage.Above_Ground}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td scope="row">Ground_Plane</td>
+                                                <td>{{context.Location.Ground_Plane}}</td>
+                                                <td>{{context.Location_Percentage.Ground_Plane}}</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+		<div align="center">
+                        <p>
+                                <h3>Running or not ?</h3>
+                        </p>
+                        <br>
+                        <table class="table table-hover" style="width: 700px">
+                                <thead class="thead-light">
+                                        <tr>
+                                                <th scope="col-4">#</th>
+                                                <th scope="col-4">Count</th>
+                                                <th scope="col-4">Percentage(%)</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td scope="row">Running</td>
+                                                <td>{{context.Running.True}}</td>
+                                                <td>{{context.Running_Percentage.True}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td scope="row">Not running</td>
+                                                <td>{{context.Running.False}}</td>
+                                                <td>{{context.Running_Percentage.False}}</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+		
+
+
+
+	</body>
+</html>
