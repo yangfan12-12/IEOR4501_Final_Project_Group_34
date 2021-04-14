@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>squirrel-project</title>
+<!doctype html>
+<head> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+.center {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 70px 0;
+}
+</style>
 </head>
-<body>
-	Hi!!! 
+<body style="background-color:#e9ecef;">
+<div class = "center">
+        <h1 style="font-size:200%;">Tracker A Squrriel </h1>
+        <br>
+        <form action = 'sightings/'>
+                <button type='submit'>  Sightings List </button>
+        </form>
+        <br>
+        <form action = 'map/'>
+                <button type='submit'>  Map View </button>
+        </form>
+        <br>
+        <form action = 'sightings/stats/'>
+                <button type = 'submit'> Sightings Stats </button>
+        </form>
+        <br>
+        <form action = 'sightings/add/'>
+                <button type = 'submit'> Add Sightings </button>
+        </form>
+	<br>
+        <form action = 'sightings/<Unique_Squirrel_Id>/'>
+                <button type = 'submit'> Update Sightings </button>
+        </form>
+        <br>
+        <br>
+</div>
 </body>
 </html>
-
