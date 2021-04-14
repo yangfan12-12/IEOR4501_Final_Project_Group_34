@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Sighting
+from django.shortcuts import redirect
 from .forms import SightingForm
 
 def base_view(request):
@@ -22,7 +23,19 @@ def list(request):
     return render(request,'sightings/list.html',context)
 
 def update(request,Unique_Squirrel_Id):
-    pass
+    sighting = Sighting.objects.get(Unique_Squirrel_Id=Unique_Squirrel_Id)
+    if request.method == 'POST':
+        form = SightingForm(request.POST, instance = sighting)
+        if form.is_valid():
+            form.save()
+            return redirect('/sightings')
+    else:
+        form = SightingForm(instance = sighting)
+    context = {
+            'form':form,
+            }
+    return render(request, 'sightings/update.html', context)
+
 
 def add(request):
     if request.method == 'POST':
