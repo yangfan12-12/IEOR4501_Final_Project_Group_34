@@ -13,7 +13,14 @@ def map(request):
     return render(request,'sightings/map.html',context)
 
 def list(request):
-    pass
+    def list(request):
+    sightings = Sighting.objects.all()
+    fields = ['Unique_Squirrel_Id','Date']
+    context={
+            'sightings':sightings,
+            'fields':fields
+            }
+    return render(request,'sightings/list.html',context)
 
 def update(request,Unique_Squirrel_Id):
     pass
