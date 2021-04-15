@@ -19,4 +19,5 @@ Group name: Project Group 34, Section 1
 "UNIS: [yl4602,yq2303]"
 
 ## Link:
-Here is a link to our server: https://ieor4501-308307.df.r.appspot.com
+Here is a link to our server: https://ieor4501-308307.df.r.appspot.com  
+On the homepage, please scroll down to explore more features :)
