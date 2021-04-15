@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from .forms import SightingForm
 
 def base_view(request):
-    return render(request,'sightings/base.html', {})
+    return render(request,'sightings/new_base.html', {})
 
 def map(request):
     sightings = Sighting.objects.all()[:100]
