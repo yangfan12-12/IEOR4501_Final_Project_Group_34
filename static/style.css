@@ -1,0 +1,121 @@
+html, body {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .header {
+      position: fixed;
+      width: 100vw;
+      height: 40px;
+      top: 0;
+      background-color: #23ade5;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .header .title {
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      line-height: 40px;
+      padding: 0 30px;
+    }
+
+    .header .title:hover {
+      cursor: pointer;
+    }
+
+    .header .author {
+      color: #eee;
+      padding-right: 30px;
+      font-size: 12px;
+      text-align: center;
+      line-height: 40px;
+    }
+
+    .side-nav {
+      position: fixed;
+      top: 40px;
+      width: 180px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      color: #333;
+      border-right: 1px solid #ddd;
+    }
+
+    .side-nav .item {
+      text-align: left;
+      padding: 10px 30px;
+      height: 56px;
+      line-height: 36px;
+      color: #333;
+    }
+
+    .side-nav .dir {
+      height: 50px;
+      line-height: 50px;
+      padding-left: 30px;
+      font-size: larger;
+    }
+
+    .side-nav .item:hover {
+      cursor: pointer;
+      border-right: 4px solid;
+      color: #23ade5;
+    }
+
+    .side-nav .active {
+      cursor: pointer;
+      border-right: 4px solid;
+      color: #23ade5;
+      background-color: rgba(35,173,229,0.15);
+    }
+
+    .side-nav .item img {
+      width: 24px;
+      height: 24px;
+      display: inline;
+    }
+
+    .content {
+      padding-left: 180px;
+      padding-top: 40px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .section {
+      padding: 10px 30px;
+      width: 100%;
+    }
+
+    .content .section .breadcrumb {
+      background-color: #fff;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .breadcrumb a {
+      color: #333;
+    }
+
+    .breadcrumb a:hover {
+      color: #23ade5;
+    }
+
+    .breadcrumb .active {
+      color: #23ade5;
+    }
+
+    .breadcrumb li {
+      color: #aaa;
+    }
+
+    .breadcrumb .active:hover, .breadcrumb li:hover {
+      cursor: default;
+    }
