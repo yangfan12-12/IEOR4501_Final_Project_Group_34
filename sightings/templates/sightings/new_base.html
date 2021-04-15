@@ -1,0 +1,367 @@
+{% load static %}
+<!doctype html>
+
+<head>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+        <style>
+                body {
+                
+                        
+                        width: 100%;
+                        height: 100%;
+                        padding: 0;
+                        margin: 0;
+                }
+
+                .page-wrap {
+                        width: 100%;
+                        height: 100%;
+                }
+
+                .header {
+                        position: fixed;
+                        width: 100vw;
+                        color: #fff;
+                        background-color: #fff;
+                        background: transparent;
+                        min-height: 60px;
+                        height: 9vh;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        transition: 0.2s;
+                        box-shadow: 0 .08533rem .42667rem 0 rgba(0, 0, 0, .05);
+                        z-index: 999;
+                }
+
+                .header-title {
+                        line-height: 60px;
+                        margin-left: 30px;
+                        font-size: 1.3rem;
+                       
+                }
+
+                .header-title:hover {
+                        cursor: pointer;
+                }
+
+                .logo {
+
+                        min-width: 60px;
+                        min-height: 60px;
+                        width: 9vh;
+                        height: 9vh;
+                        border-radius: 50%;
+                        background: url('static/images/new-logo.png');
+                        background-size: cover;
+                }
+
+                .center {
+                        margin: auto;
+                        width: 50%;
+                        text-align: center;
+                        padding: 70px 0;
+                }
+
+                .jumbotron {
+                        width: 100vw;
+                        height: 100vh;
+                        background: url('static/images/bg.jpeg') no-repeat;
+                        background-size: cover;
+                        padding: 0;
+                        border-radius: 0;
+                }
+
+                .intro {
+                        position: absolute;
+                        min-width: 200px;
+                        min-height: 200px;
+                        left: 50vw;
+                        top: 50vh;
+                        transform: translate(-50%, -50%);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                }
+
+                .intro .title {
+                        color: #fff;
+                        text-align: center;
+                }
+
+                .intro .descriptions {
+                        margin: 20px 0;
+                        text-align: center;
+                        color: #fff;
+                }
+
+                .intro .more {
+                        text-align: center;
+                }
+
+                .intro-btn {
+                        margin: 0 auto;
+                        height: 38px;
+                        width: 184px;
+                        text-align: center;
+                        border-radius: 10px;
+                        background-color: #0097cd;
+                        color: #fff;
+                        padding-top: 6px;
+                }
+
+                .intro-btn:hover {
+                        cursor: pointer;
+                        background-color: #23ade5;
+                }
+                .quick-start {
+                        margin: 30px 5vw;
+                }
+                .option {
+                        margin: 20px 25px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                }
+                @media only screen and (max-width: 720px) {
+                        .quick-start {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        }   
+                        .option {
+                                width: 80vw;
+                        }
+                }
+
+                @media only screen and (min-width: 720px) {
+                        .quick-start {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        }   
+                        .option {
+                                width: 27vw;
+                        }
+                }
+                @media only screen and (min-width: 1260px) {
+                        .quick-start {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        }   
+                        .option {
+                                width: 20vw;
+                                margin: 20px 80px;
+                        }
+                }
+                
+               
+                .option-icon img {
+                  display: block;
+                        margin: 0 auto;
+                        width: 64px;
+                        height: 64px;
+                }
+                .option-title {
+                  text-align: center;
+                  font-size: 16px;
+                  color: #333;
+                  margin-top: 20px;
+                  margin-bottom: 15px;
+                }
+                .option-btn {
+                  text-align: center;
+                  color: #fff;
+                  font-size: 18px;
+                  margin-top: 5px;
+                  letter-spacing: 0.1rem;
+                  opacity: 0.6;
+                }
+                .option-btn:hover {
+                  cursor: pointer;
+
+                }
+
+                .footer {
+                  width: 100vw;
+                  background-color: #333;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                }
+
+                .footer .footer-title {
+                  text-align: center;
+                  margin: 40px 0 20px;
+                  
+
+                }
+                .section {
+                  margin: 0 auto;
+                  width: 80vw;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: flex-start;
+                  
+                }
+                .section .title {
+                  color: #fb7299;
+                  font-weight: 800;
+                  font-size: 24px;
+                  letter-spacing: 0.1rem;
+                  font-size: larger;
+                  margin-top: 30px;
+                  margin-bottom: 10px;
+                  text-align: left;
+                }
+                .section .col{
+                  display: flex;
+                  margin-left: 8vw;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  font-size: 13px;
+                  color: #ddd;
+                }
+                .section .item {
+                  margin: 10px 0;
+                  color: #ddd;
+                }
+
+                .section .person {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: flex-start;
+                  margin: 10px 0;
+                }
+                .person .name {
+                  margin-right: 25px;
+                }
+                .person .mail:hover, .section .item span:hover {
+                  color: #23ade5;
+                  cursor: pointer;
+                }
+                .copyright {
+                  font-size: 14px;
+                  color: #666;
+                  margin: 5px 1px 10px 30px;
+                }
+
+        </style>
+</head>
+
+<body style="background-color:#e9ecef;">
+
+
+        <div class="page-wrap">
+                <div class="header" id="header">
+                        <div class="logo">
+
+                        </div>
+                        <div class="header-title" onclick="directPageTo('/')">
+                                <span>| &nbsp;&nbsp; Track A Squirrel</span>
+                        </div>
+
+                </div>
+                <div class="jumbotron">
+                        <div class="intro">
+                                <div class="title">
+                                        <h1>Track A Squirrel</h1>
+                                </div>
+                                <div class="descriptions">
+                                        <!-- <p>Go find lovely squirrels!</p> -->
+                                </div>
+                                <div class="more">
+                                        <div class="intro-btn" onclick="directPageTo('/map')" role="button" >Check Map Now >>></div>
+                                </div>
+                        </div>
+                </div>
+                <div class="quick-start">
+                        <div class="option">
+                                <div class="option-icon">
+                                        <img src="static/images/icon/map.png">
+                                </div>
+                                <div class="option-title">
+                                        Here you can find all sightings in a real map.
+                                </div>
+                                <div class="option-btn intro-btn" onclick="directPageTo('/map')">
+                                        Go To Map
+                                </div>
+                        </div>
+                        <div class="option">
+                                <div class="option-icon">
+                                        <img src="static/images/icon/list.png">
+                                </div>
+                                <div class="option-title">
+                                        Here you can find data of all sightings.
+                                </div>
+                                <div class="option-btn intro-btn" onclick="directPageTo('/sightings')">
+                                        Go To Sightings
+                                </div>
+                        </div>
+                        <div class="option">
+                                <div class="option-icon">
+                                        <img src="static/images/icon/stats.png">
+                                </div>
+                                <div class="option-title">
+                                        Here you can find statistics of the research.
+                                </div>
+                                <div class="option-btn intro-btn" onclick="directPageTo('/sightings/stats')">
+                                        Go To Statistics
+                                </div>
+                        </div>
+                        
+                </div>
+
+        </div>
+        <div class="footer">
+          <div class="section">
+          </div>
+          <div class="copyright">
+            © Track A Squirrel inc. All Rights Reserved.
+          </div>
+
+       
+        </div>
+</body>
+<script>
+        var timer;
+        // scroll
+        document.onscroll = function () {
+                clearTimeout(timer);
+                timer = setTimeout(isScrollEnd, 100);
+                t1 = document.documentElement.scrollTop || document.body.scrollTop;
+        }
+        function isScrollEnd() {
+                t2 = document.documentElement.scrollTop || document.body.scrollTop;
+                if (t2 >= t1 && t2 >= 100) {
+                        var header = document.getElementById('header');
+                        header.style.background = '#fff';
+                        header.style.color = '#333';
+                } else if (t2 < 100) {
+                        var header = document.getElementById('header');
+                        header.style.background = 'transparent';
+                        header.style.color = '#fff';
+                }
+                clearTimeout(timer);
+        }
+
+        function directPageTo(url) {
+                console.log(url);
+                window.location.href = url;
+        }
+</script>
+
+</html>
