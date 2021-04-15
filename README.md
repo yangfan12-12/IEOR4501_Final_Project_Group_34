@@ -14,7 +14,7 @@ In our application, you can:
 
 
 ## Project Group Information:
-Group name: Project Group 34  
+Group name: Project Group 34, Section 1  
 "UNIS: [yl4602,yq2303]"
 
 ## Link:
