@@ -1,14 +1,90 @@
-<!doctype html>
-<html>
-	<head>
-		<title>Squirrels: Statistics Overview </title> 
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        </head>
-        <body>
-		<div align="center">
-		<p>
-			<h1>Statistics Overview</h1>
-		</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- local style -->
+  <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+          .badge {
+                width: 60px;
+                padding: 5px;
+                background-color: #0097cd;
+                margin-right: 20px;
+          }
+          @media only screen and (max-width: 720px) {
+                        ul h6 span {
+                                display: none;
+                        }
+                }
+          .section .fun-btn .badge:hover {
+                background-color: #23ade5;
+          }
+          .section ul {
+                padding-left: 0;
+                margin-bottom: 0;
+          }
+          .section h6 {
+                margin-top: 10px;
+          }
+  </style>
+  <script>
+    function directPageTo(url) {
+    window.location.href = url;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="page-wrap">
+    <div class="header">
+      <div class="title">
+        Track a Squirrel
+      </div>
+      <div class="author">
+        IEOR4501
+      </div>
+    </div>
+    <div class="side-nav">
+      <div class="dir">
+        Directory
+      </div>
+      <div class="item" onclick="directPageTo('/')">
+        <img src="../../static/images/nav-icon/home.png" />&nbsp;&nbsp;Home
+      </div>
+      <div class="item" onclick="directPageTo('/map')">
+        <img src="../../static/images/nav-icon/map.png" />&nbsp;&nbsp;Map
+      </div>
+      <div class="item" onclick="directPageTo('/sightings')">
+        <img src="../../static/images/nav-icon/sightings.png" />&nbsp;&nbsp;Sightings
+      </div>
+      <div class="item active">
+        <img src="../../static/images/nav-icon/stats.png" />&nbsp;&nbsp;Statistics
+      </div>
+    </div>
+    <div class="content">
+      <div class="section">
+        <ol class="breadcrumb">
+          <li><a href="/">Home </a></li>
+          <li> &nbsp;&nbsp; / &nbsp;&nbsp; </li>
+          <li><a href="../">Sightings </a></li>
+          <li> &nbsp;&nbsp; / &nbsp;&nbsp; </li>
+          <li class="active">Statistics Overview</li>
+        </ol>
+      </div>
+      <div class="section">
+        <div align="center">
 		<p>
 			<h3>Total Numbers:</h3>
 		</p>
@@ -23,13 +99,7 @@
 			</p>
 			<br>
 			<table class="table table-hover" style="width: 700px">
-				<style>
-					.table th, .table td { 
-						text-align: center;
-						vertical-align: middle!important;
-					}
-				</style>
-				<thead  class="thead-light">
+				<thead class="thead-light">
 					<tr>
 						<th scope="col-4">Shift</th>
 						<th scope="col-4">Count</th>
@@ -163,6 +233,22 @@
                                 </tbody>
                         </table>
                 </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+<!doctype html>
+<html>
+	<head>
+		<title>Squirrels: Statistics Overview </title> 
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        </head>
+        <body>
+		
 		
 
 
