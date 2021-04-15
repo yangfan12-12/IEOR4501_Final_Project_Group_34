@@ -1,37 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>List of Squrriel Sightings</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<head>
+  {% load static %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- local style -->
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+    
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+  
   <style>
-        body{text-align:center}
+          .fun-btn a {
+                padding: 5px;
+                background-color: #23ade5;
+          }
+          .fun-btn a:hover {
+                background-color: #fb7299;
+          }
   </style>
-  </head>
-  <br>
-  <body>
-        <h1 style="font-size:200%;">List of Squirrel Sightings </h1>
-        <br>
-        <ul>
-                <h6><a href="add/"  class="badge badge-info">ADD</a> Click to add a new squirrel sighting you spot!</h>
-                <h6><a href="stats/"  class="badge badge-info">STATS</a> Click to see statistical info of squirrel sightings!</h>
-        </ul>
-        </br>
-        <div>
-        <table class="table">
+  <script>
+    function directPageTo(url) {
+    console.log(url);
+    window.location.href = url;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="page-wrap">
+    <div class="header">
+      <div class="title">
+        Track a Squirrel
+      </div>
+      <div class="author">
+        IEOR4501 Group_34
+      </div>
+    </div>
+    <div class="side-nav">
+      <div class="dir">
+        Directory
+      </div>
+      <div class="item" onclick="directPageTo('/')">
+        <img src="../static/images/nav-icon/home.png" />&nbsp;&nbsp;Home
+      </div>
+      <div class="item" onclick="directPageTo('/map')">
+        <img src="../static/images/nav-icon/map.png" />&nbsp;&nbsp;Map
+      </div>
+      <div class="item active">
+        <img src="../static/images/nav-icon/sightings.png" />&nbsp;&nbsp;Sightings
+      </div>
+      <div class="item" onclick="directPageTo('/sightings/stats')">
+        <img src="../static/images/nav-icon/stats.png" />&nbsp;&nbsp;Statistics
+      </div>
+    </div>
+    <div class="content">
+      <div class="section">
+        <ol class="breadcrumb">
+          <li><a href="/">Home </a></li>
+          <li> &nbsp;&nbsp; / &nbsp;&nbsp; </li>
+          <li class="active">Sightings</li>
+        </ol>
+      </div>
+      
+      <div class="section">
+         <table class="table">
                 <thead>
                         <tr>
                                 <th scope = "col">Unique Squirrel Id</th>
                                 <th scope = "col">Date</th>
                                 <th scope = "col">To-Update</th>
-           
-                        </tr>   
-                </thead>
-                <tbody>
-                {% for sighting in sightings %}
+                                {% for sighting in sightings %}
                         <tr>
                                 <td>{{ sighting.Unique_Squirrel_Id }}</td>
                                 <td>{{ sighting.Date }}</td>
@@ -39,16 +87,14 @@
        
                         </tr>
                 {% endfor %}
-                </tbody>
-        </table>
-        </div>
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-  </body>
-  </br>
+                        </tr>   
+                </thead>
+          </table>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</body>
+
 </html>
